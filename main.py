@@ -5,6 +5,7 @@ def program():
     while True:
         ret_val, img = cam.read()
  #my name is bigo 7amo
+        #my name is blobo2
         # draw 3*3 matrix on the frame
         cv2.rectangle(img, (100, 100), (300, 300), (0, 0, 0), 3)
         cv2.line(img, (100, 166), (300, 166), (0, 0, 0), 3)
