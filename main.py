@@ -7,6 +7,7 @@ def program():
  #my name is bigo 7amot
         #my name is blobo2
         # draw 3*3 matrix on the frame
+        #zobry
         cv2.rectangle(img, (100, 100), (300, 300), (0, 0, 0), 3)
         cv2.line(img, (100, 166), (300, 166), (0, 0, 0), 3)
         cv2.line(img, (100, 233), (300, 233), (0, 0, 0), 3)
