@@ -12,7 +12,6 @@ def program():
         cv2.line(img, (100, 233), (300, 233), (0, 0, 0), 3)
         cv2.line(img, (166, 100), (166, 300), (0, 0, 0), 3)
         cv2.line(img, (233, 100), (233, 300), (0, 0, 0), 3)
-        # lol = img[100:300, 100:300]
         # crop the 3*3 matrix and display it
         crop_img = img[100:300, 100:300]
         cv2.imshow('crop', crop_img)
