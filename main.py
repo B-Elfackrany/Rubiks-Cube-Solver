@@ -19,23 +19,16 @@ def program():
         crop_img = img[100:300, 100:300]
         cv2.imshow('crop', crop_img)
 
-        mask = cv2.inRange(crop_img, l_w, u_w)
-        res = cv2.bitwise_and(crop_img, crop_img, mask=mask)
-        whitecnts = cv2.findContours(mask.copy(),
-                              cv2.RETR_EXTERNAL,
-                              cv2.CHAIN_APPROX_SIMPLE)[-2]
-
-        for cnt in whitecnts:
-            blue_area = max(cnt, key=cv2.contourArea)
-            (xg, yg, wg, hg) = cv2.boundingRect(blue_area)
-            cv2.rectangle(img, (xg, yg), (xg + wg, yg + hg), (0, 255, 0), 2)
-            cv2.putText(img, 'White', (xg, yg), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 255, 255), 2)
+        #mask = cv2.inRange(crop_img, l_w, u_w)
+        #res = cv2.bitwise_and(crop_img, crop_img, mask=mask)
 
         for i in range(0, 3):
             for j in range(0, 3):
                 # crop the 3*3 matrix
                 crop_img = img[100 + i * 66:166 + i * 66, 100 + j * 66:166 + j * 66]
+                (b, g, r) = crop_img[33, 33]
                 # display the cropped matrix
+                print("Pixel at center of ({}) square - Red: {}, Green: {}, Blue: {}".format(i, j, r, g, b))
                 cv2.imshow('crop' + str(i) + str(j), crop_img)
 
         cv2.imshow('my webcam', img)
