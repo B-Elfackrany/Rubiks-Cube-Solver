@@ -28,7 +28,7 @@ def program():
                 crop_img = img[100 + i * 66:166 + i * 66, 100 + j * 66:166 + j * 66]
                 (b, g, r) = crop_img[33, 33]
                 # display the cropped matrix
-                print("Pixel at center of ({}) square - Red: {}, Green: {}, Blue: {}".format(i, j, r, g, b))
+                print("Pixel at center of ({}, {}) square - Red: {}, Green: {}, Blue: {}".format(i, j, r, g, b))
                 cv2.imshow('crop' + str(i) + str(j), crop_img)
 
         cv2.imshow('my webcam', img)
